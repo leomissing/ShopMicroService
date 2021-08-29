@@ -1,0 +1,17 @@
+command for initial docker mongo image:
+    docker run -d -p 27017:27017 mongo
+
+insert array of product:
+    curl -d "@array.json" -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/data/insert_array/
+
+insert one example of product:
+    curl -d "@data.json" -H "Content-Type: application/json" -X POST http://127.0.0.1:8000/data/insert/
+
+find product by id:
+    curl -d "<type id here>" -X POST http://127.0.0.1:8000/data/find_by_id/
+
+return products names sorted by name:
+    curl http://127.0.0.1:8000/data/sort_by_name/
+
+return products names sorted by param you typed:
+    curl -d "color" -X POST http://127.0.0.1:8000/data/sort_by_param/
